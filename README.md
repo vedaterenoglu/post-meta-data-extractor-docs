@@ -8,6 +8,16 @@ Documentation site for [`post-meta-extractor`](https://github.com/vedaterenoglu/
 - This repo extends with task-oriented guides, troubleshooting, and deep references.
 - Canonical README snapshot is stored at `pages/docs/reference/canonical-readme.md` and synced via workflow PRs.
 
+## Examples
+
+Runnable integration examples across frameworks:
+
+- [Examples Monorepo](https://github.com/vedaterenoglu/post-meta-data-extractor-examples)
+- [Next.js + React](https://github.com/vedaterenoglu/post-meta-data-extractor-examples/tree/main/nextjs-react)
+- [Nuxt + Vue](https://github.com/vedaterenoglu/post-meta-data-extractor-examples/tree/main/nuxt-vue)
+- [TanStack Start + React](https://github.com/vedaterenoglu/post-meta-data-extractor-examples/tree/main/tanstack-start-react)
+- [TanStack Start + Solid](https://github.com/vedaterenoglu/post-meta-data-extractor-examples/tree/main/tanstack-start-solid)
+
 ## Development
 
 ```bash
