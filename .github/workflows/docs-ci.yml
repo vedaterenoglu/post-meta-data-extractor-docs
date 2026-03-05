@@ -1,0 +1,40 @@
+name: Docs CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Build docs
+        run: npm run build
+
+      - name: Readme drift check
+        run: npm run check:readme-drift
+
+      - name: Link check
+        run: npm run check:links
+
+      - name: Check markdown links (external)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --verbose README.md pages/docs/**/*.md

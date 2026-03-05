@@ -1,0 +1,41 @@
+{
+  "name": "post-meta-data-extractor-docs",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vedaterenoglu/post-meta-extractor-docs.git"
+  },
+  "author": {
+    "name": "Vedat Erenoglu",
+    "email": "info@vedaterenoglu.com",
+    "url": "https://vedaterenoglu.com",
+    "linkedin": "https://www.linkedin.com/in/vedaterenoglu/"
+  },
+  "private": true,
+  "description": "Documentation site for post-meta-extractor",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "check:links": "node ./scripts/check-links.mjs",
+    "check:readme-drift": "node ./scripts/check-readme-drift.mjs",
+    "sync:readme": "node ./scripts/sync-readme.mjs"
+  },
+  "engines": {
+    "node": ">=22 <23"
+  },
+  "dependencies": {
+    "next": "^15.2.0",
+    "nextra": "^3.2.0",
+    "nextra-theme-docs": "^3.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/react": "^18.3.18",
+    "typescript": "^5.8.2"
+  }
+}

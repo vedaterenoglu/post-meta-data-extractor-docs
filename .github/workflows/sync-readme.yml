@@ -1,0 +1,55 @@
+name: Sync Canonical README
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '18 5 * * *'
+  repository_dispatch:
+    types: [readme-updated]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout docs repo
+        uses: actions/checkout@v4
+
+      - name: Checkout source package repo
+        uses: actions/checkout@v4
+        with:
+          repository: vedaterenoglu/post-meta-extractor
+          ref: main
+          path: .upstream/post-meta-extractor
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Sync README snapshot
+        run: node ./scripts/sync-readme.mjs
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Drift check
+        run: npm run check:readme-drift
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: 'docs: sync canonical README snapshot'
+          branch: chore/sync-readme-snapshot
+          title: 'docs: sync canonical README snapshot'
+          body: |
+            Automated sync from upstream README.
+
+            - Source: `vedaterenoglu/post-meta-extractor`
+            - Updated canonical snapshot and sync marker
+          labels: |
+            documentation
+            automated
