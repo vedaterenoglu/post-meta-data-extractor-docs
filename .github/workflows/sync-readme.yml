@@ -42,6 +42,7 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v6
         with:
+          token: ${{ secrets.DOCS_SYNC_PAT || github.token }}
           commit-message: 'docs: sync canonical README snapshot'
           branch: chore/sync-readme-snapshot
           title: 'docs: sync canonical README snapshot'

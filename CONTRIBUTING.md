@@ -10,6 +10,9 @@
 
 - Workflow `.github/workflows/sync-readme.yml` syncs upstream README snapshot through PRs.
 - Do not hand-edit `pages/docs/reference/canonical-readme.md` unless sync tooling is being fixed.
+- If sync PR creation fails with `GitHub Actions is not permitted to create or approve pull requests`:
+  - Enable repository setting: `Settings -> Actions -> General -> Workflow permissions -> Allow GitHub Actions to create and approve pull requests`.
+  - Or add repository secret `DOCS_SYNC_PAT` (Personal Access Token with `repo` scope), used by the workflow as a fallback token.
 
 ## Required Checks
 
