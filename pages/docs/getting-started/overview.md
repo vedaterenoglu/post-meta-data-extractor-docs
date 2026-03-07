@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Overview
 
-Last synced from README commit: `431a1cd`
+Last synced from README commit: `4cdb619`
 
 `post-meta-extractor` is a framework-agnostic npm package for extracting metadata from markdown content.
 
