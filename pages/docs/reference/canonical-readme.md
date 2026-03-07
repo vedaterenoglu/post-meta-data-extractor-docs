@@ -42,6 +42,16 @@ README is the canonical quickstart and top-level API summary. For deeper guides,
 - [Nuxt Guide](https://vedaterenoglu.github.io/post-meta-data-extractor-docs/docs/guides/nuxt)
 - [Core API Reference](https://vedaterenoglu.github.io/post-meta-data-extractor-docs/docs/reference/core-api)
 
+## Examples
+
+Runnable integration examples across frameworks:
+
+- [Examples Monorepo](https://github.com/vedaterenoglu/post-meta-data-extractor-examples)
+- [Next.js + React](https://github.com/vedaterenoglu/post-meta-data-extractor-examples/tree/main/nextjs-react)
+- [Nuxt + Vue](https://github.com/vedaterenoglu/post-meta-data-extractor-examples/tree/main/nuxt-vue)
+- [TanStack Start + React](https://github.com/vedaterenoglu/post-meta-data-extractor-examples/tree/main/tanstack-start-react)
+- [TanStack Start + Solid](https://github.com/vedaterenoglu/post-meta-data-extractor-examples/tree/main/tanstack-start-solid)
+
 ## Core Sync API
 
 ```ts
